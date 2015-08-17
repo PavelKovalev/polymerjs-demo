@@ -1,0 +1,25 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+
+<dom-module id="input-group">
+
+  <template>
+    <div class="form-group">
+      <label class="col-md-3">[[label]]</label>
+      <div class="col-md-9">
+        <input type="text" name="[[name]]" class="form-control"/>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "input-group",
+      properties: {
+        name: String,
+        label: String
+      }
+    });
+  </script>
+
+</dom-module>

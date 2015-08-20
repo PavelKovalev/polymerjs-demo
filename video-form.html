@@ -1,0 +1,28 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+<link rel="import"
+      href="bower_components/iron-form/iron-form.html">
+
+<dom-module id="video-form">
+
+  <template>
+    <form is="iron-form" class="form-horizontal" method="post">
+      <content></content>
+      
+    </form>
+  </template>
+
+  <script>
+    Polymer({
+      is: "video-form",
+      properties: {
+        video: Object
+      },
+      ready: function() {
+        console.log(this.video);
+        alert(JSON.stringify(this.video));
+      }
+    });
+  </script>
+
+</dom-module>

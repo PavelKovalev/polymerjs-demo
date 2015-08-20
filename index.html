@@ -2,18 +2,32 @@
 <html>
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="proto-element.html">
+    <link rel="import" href="input-group.html">
+    <link rel="import" href="video-form.html">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
   </head>
   
   <body>
     
     <div class="container">
-      <form class="form-horizontal">
-        <input-group label="Title" name="video.title"></input-group>
+      <video-form id="video-form" video="{{video}}" attr="{{video.title}}">
+        <input-group label="Title" name="{{video.title}}"></input-group>
         <input-group label="Blurb" name="video.blurb"></input-group>
-      </form>
+        
+        <button type="submit">Save</button>
+      </video-form>
     </div>
 
+  <script type="text/javascript">
+    var videoFormScope = document.querySelector("video-form");
+    
+    videoFormScope.addEventListener("iron-form-submit", function(event) {
+      alert(event.detail)
+    });
+    videoFormScope.video = {
+      'title': 'Test video clip',
+      'blurb': 'Test video blurb'
+    };
+  </script>
   </body>
 </html>
